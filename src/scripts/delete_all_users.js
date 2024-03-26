@@ -1,0 +1,17 @@
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
+async function deletePhoneNumber() {
+  try {
+    await prisma.user.updateMany({
+      data: {
+        phone: null,
+      },
+    });
+    console.log('Deleted phone number for all users');
+  } catch (error) {
+    console.error('Error deleting phone number:', error);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+deletePhoneNumber();
