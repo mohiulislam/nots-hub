@@ -7,6 +7,7 @@ import { NotesModule } from './notes/notes.module';
 import { AuthModule } from './auth/auth.module';
 import { WebsocketGateway } from './websocket/websocket.gateway';
 import { BackupModule } from './backup/backup.module';
+import { PdfModule } from './pdf/pdf.module';
 @Module({
   imports: [
     UsersModule,
@@ -16,6 +17,7 @@ import { BackupModule } from './backup/backup.module';
     NotesModule,
     AuthModule,
     BackupModule,
+    PdfModule,
   ],
   controllers: [AppController],
   providers: [AppService, WebsocketGateway],
