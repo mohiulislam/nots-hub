@@ -10,7 +10,9 @@ import { BackupModule } from './backup/backup.module';
 @Module({
   imports: [
     UsersModule,
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     NotesModule,
     AuthModule,
     BackupModule,

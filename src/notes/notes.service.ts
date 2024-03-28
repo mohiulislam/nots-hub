@@ -10,9 +10,12 @@ export class NotesService {
   async create(createNoteDto: CreateNoteDto) {
     return await this.prisma.note.create({ data: createNoteDto });
   }
-
   async findAll() {
-    return await this.prisma.note.findMany();
+    return await this.prisma.note.findMany({
+      include: {
+        owner: true,
+      },
+    });
   }
 
   async findOne(id: string) {

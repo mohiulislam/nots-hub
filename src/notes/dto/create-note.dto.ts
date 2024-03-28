@@ -23,7 +23,7 @@ export class CreateNoteDto {
     @IsNotEmpty()
     @ApiProperty({
         type: 'string',
-        example: '60d5ecb4b48587001f3e8e7e',
+        example: '660401dd76b9d494dccfcdd5',
     })
     ownerId: string;
 }
